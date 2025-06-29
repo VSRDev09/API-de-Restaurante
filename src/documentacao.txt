@@ -1,0 +1,109 @@
+GET /clientes : Lista todos os clientes cadastrados
+{
+  "id",
+  "nome",
+  "cpf"
+}
+- Retorna a lista completa de clientes
+
+POST /clientes : Cadastra um novo cliente
+{
+  "nome",
+  "cpf"
+}
+- Cadastra um cliente com nome e CPF
+
+PUT /clientes?id=1 : Atualiza os dados de um cliente
+{
+  "nome",
+  "cpf"
+}
+- Atualiza o cliente com base no ID informado
+
+DELETE /clientes?id=1 : Remove um cliente do sistema
+{
+  "id"
+}
+- Remove o cliente pelo ID
+
+GET /pratos : Lista todos os pratos cadastrados
+{
+  "id",
+  "nome",
+  "preco"
+}
+- Retorna a lista de pratos com nome e preço
+
+POST /pratos : Cadastra um novo prato
+{
+  "nome",
+  "preco"
+}
+- Preço deve ser um número decimal com ponto
+
+PUT /pratos?id=1 : Atualiza um prato existente
+{
+  "nome",
+  "preco"
+}
+- Atualiza o prato com base no ID informado
+
+DELETE /pratos?id=1 : Remove um prato do sistema
+{
+  "id"
+}
+- Remove o prato pelo ID
+
+GET /pedidos : Lista todos os pedidos feitos
+{
+  "id",
+  "quantidade",
+  "valorTotal",
+  "clienteId",
+  "pratoId",
+}
+- Mostra todos os pedidos realizados
+
+POST /pedidos : Cria um novo pedido
+{
+  "quantidade",
+  "clienteId",
+  "pratoId"
+}
+- Cria um pedido com base no cliente e prato
+
+PUT /pedidos?id=1 : Atualiza um pedido existente
+{
+  "quantidade",
+  "clienteId",
+  "pratoId"
+  
+}
+- Atualiza um pedido específico pelo ID
+
+DELETE /pedidos?id=1 : Remove um pedido do sistema
+{
+  "id"
+}
+- Remove o pedido com base no ID
+
+GET /relatorios/top-clientes-pedidos : Lista os 5 clientes que mais fizeram pedidos
+{
+  "nomeCliente",
+  "quantidadePedidos"
+}
+- Retorna os nomes e a quantidade de pedidos dos 5 que mais pediram
+
+GET /relatorios/top-clientes-gastos : Lista os 5 clientes que mais gastaram
+{
+  "nomeCliente",
+  "valorTotalGasto"
+}
+- Retorna os nomes e o quanto gastaram os 5 clientes que mais gastaram
+
+GET /relatorios/pratos-mais-pedidos : Lista os 5 pratos mais pedidos
+{
+  "nomePrato",
+  "quantidadePedidos"
+}
+- Retorna os pratos mais populares com base na quantidade de pedidos
